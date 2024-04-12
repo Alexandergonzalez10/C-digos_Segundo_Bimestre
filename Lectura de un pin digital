@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   //Variable local, que se encarga de almacenar el valor (abierto o cerrado)
-  //del pulsador conectado al pin1g  2
+  //del pulsador conectado al pin12
   bool estado_boton = digitalRead(push_button);
   if(estado_boton == HIGH) //¿He presionado el interruptor?
   {
