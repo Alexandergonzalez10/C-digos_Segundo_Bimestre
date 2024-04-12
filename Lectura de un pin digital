@@ -13,11 +13,11 @@
 */
 
 //Directivas del preprocesador
-#define push_button 12 //Push button conectando al pin2
+#define push_button 12 //Push button conectando al pin12
 #define led 13
 
 void setup() {
-  pinMode(push_button, INPUT); //Pin2 como entrada
+  pinMode(push_button, INPUT); //Pin12 como entrada
   pinMode(led, OUTPUT);
   Serial.begin(9600);                       //Inicio la comunicación serial
   Serial.println("Lectura de un pulsador"); //Envío el texto entre comillas al puerto serie
@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   //Variable local, que se encarga de almacenar el valor (abierto o cerrado)
-  //del pulsador conectado al pin2
+  //del pulsador conectado al pin1g  2
   bool estado_boton = digitalRead(push_button);
   if(estado_boton == HIGH) //¿He presionado el interruptor?
   {
