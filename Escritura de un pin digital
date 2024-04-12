@@ -1,0 +1,31 @@
+/*
+  Fundación Kinal
+    Centro Educativo Técnico Laboral Kinal
+    Alexander Daniel González Vásquez
+    2020414
+    Quinto Perito
+    Quinto Electrónica
+    EB5AM
+    Taller de Electrónica Digital y Reparación de Computadoras
+    Proyecto: Estructura de un pin digital (Encender o apagar un pin digital)
+    Prof. Alejandro López Navas
+    Fecha: 12 de abril de 2024
+*/
+
+//Directivas del preprocesador
+#define LedRojo  13        //pin4 conectado a un led
+#define tiempo_espera 500  //tiempo de estado en un led
+
+void setup() {
+  pinMode(LedRojo, OUTPUT); //Pin4 como salida
+  digitalWrite(LedRojo, LOW); //LED conectados al pin13 inicia apagado
+}
+
+void loop() {
+  digitalWrite(LedRojo, HIGH);//Enciendo el led conectaod al pin4
+  delay(tiempo_espera); //Espera de 500 milisegundosdigitalWrite(LedRojo, LOW);//Enciendo el led conectaod al pin4
+  digitalWrite(LedRojo, LOW);//Apago el led conectaod al pin4
+  delay(tiempo_espera); //Espera de 500 milisegundos
+  }
+ 
+  
