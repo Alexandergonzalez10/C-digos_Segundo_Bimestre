@@ -17,14 +17,14 @@
 #define tiempo_espera 500  //tiempo de estado en un led
 
 void setup() {
-  pinMode(LedRojo, OUTPUT); //Pin4 como salida
+  pinMode(LedRojo, OUTPUT); //Pin13 como salida
   digitalWrite(LedRojo, LOW); //LED conectados al pin13 inicia apagado
 }
 
 void loop() {
-  digitalWrite(LedRojo, HIGH);//Enciendo el led conectaod al pin4
-  delay(tiempo_espera); //Espera de 500 milisegundosdigitalWrite(LedRojo, LOW);//Enciendo el led conectaod al pin4
-  digitalWrite(LedRojo, LOW);//Apago el led conectaod al pin4
+  digitalWrite(LedRojo, HIGH);//Enciendo el led conectaod al pin13
+  delay(tiempo_espera); //Espera de 500 milisegundosdigitalWrite(LedRojo, LOW);//Enciendo el led conectaod al pin13
+  digitalWrite(LedRojo, LOW);//Apago el led conectaod al pin13
   delay(tiempo_espera); //Espera de 500 milisegundos
   }
  
