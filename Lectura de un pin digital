@@ -33,7 +33,7 @@ void loop() {
       digitalWrite(led, LOW); //apago el led
   } else {
     //si no lo he presiado
-      digitalWrite(led, HIGH); //apago el led
+      digitalWrite(led, HIGH); //enciende el led
   }
  
   
