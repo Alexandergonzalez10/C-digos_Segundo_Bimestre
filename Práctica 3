@@ -1,0 +1,105 @@
+/* 
+	Fundación Kinal
+    Centro educativo Técncico Laboral Kinal
+    Quinto Perito
+    Quinto Electrónica 
+    Codigo Técnico: EB5AM
+    Curso: Taller de Electrónica Digital y reparación de computadoras
+    Proyecto: Catálogo de productos
+    Dev: Alexander González 2020414
+    Fecha: 19 de abril de 2024
+*/
+ 
+ 
+  struct productos 
+{
+  char datos_dulce[50]; 
+    byte cantidad_dulces;
+};
+ 
+ 
+ 
+  productos dulce1 = {"Chocolate", 54};
+productos dulce2 = {"Bombones", 25};
+  productos dulce3 = {"Chicles", 98};
+productos dulce4 = {"Picafresa", 25};
+ 
+ 
+  void setup() {
+  Serial.begin(9600);     
+    Serial.println("SUS DULCES PUEDEN SER ");     
+  Serial.begin(9600);     
+    pinMode(2, INPUT);     
+  pinMode(3, INPUT);     
+}
+ 
+ 
+  byte contador = 0;
+void loop() {
+    if(digitalRead(2)==HIGH) {
+  delay(350);
+    contador = contador+1; 
+  Serial.println(contador );
+
+  if(contador == 1){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce1.datos_dulce);
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce1.cantidad_dulces);
+  }    
+
+  if(contador == 2){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce2.datos_dulce);
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce2.cantidad_dulces);
+  } 
+
+  if(contador == 3){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce3.datos_dulce);
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce3.cantidad_dulces);
+  }
+
+  if(contador == 4){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce4.datos_dulce);
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce4.cantidad_dulces);
+  } 
+}
+
+    else if(digitalRead(3)==HIGH){  
+   delay(350);
+     contador = contador-1;  
+   Serial.println(contador );
+  if(contador == 1){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce1.datos_dulce);
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce1.cantidad_dulces);
+  } 
+
+  if(contador == 2){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce2.datos_dulce); 
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce2.cantidad_dulces);
+  } 
+
+  if(contador == 3){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce3.datos_dulce); 
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce3.cantidad_dulces);
+  } 
+
+  if(contador == 4){
+     Serial.print("Su dulce seleccionado es ");
+   Serial.println(dulce4.datos_dulce); 
+     Serial.print("El inventario de su dulce es  ");
+   Serial.println(dulce4.cantidad_dulces);
+  } 
+}
+}
