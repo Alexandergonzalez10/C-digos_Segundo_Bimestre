@@ -1,0 +1,24 @@
+int x = 0;
+
+void setup()
+{
+  Serial.begin(9600);     
+  pinMode(13, INPUT);     
+  pinMode(12, INPUT);
+}
+
+void loop()
+{
+    if(digitalRead(13)==HIGH) {
+      if(x < 100){
+      delay(100);
+      Serial.println(x++);
+      }
+    }
+    if(digitalRead(12)==HIGH) {
+      if(x < 100){
+      delay(100);
+      Serial.println(x--);
+      }
+    }
+}
