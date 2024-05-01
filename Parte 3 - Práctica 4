@@ -1,0 +1,174 @@
+/* 
+	Fundación Kinal
+    Centro educativo Técncico Laboral Kinal
+    Quinto Perito
+    Quinto Electrónica 
+    Codigo Técnico: EB5AM
+    Curso: Taller de Electrónica Digital y reparación de computadoras
+    Proyecto: Comunicación serial y visualización
+    Dev: Alexander González 2020414
+    Fecha: 19 de abril de 2024
+*/
+
+struct pulsador
+{
+  char nombre[50]; 
+};
+ 
+ 
+pulsador pulsador1 = {"Alexander Daniel Gonzalez Vasquez"};
+pulsador pulsador2 = {"por su atencion"};
+
+byte contador = 0;
+
+void setup()
+{
+  Serial.begin(3600);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(A4, OUTPUT);
+  pinMode(A5, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(A3, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A1, INPUT);
+  pinMode(A0, INPUT);
+}
+
+void loop()
+{
+  if(digitalRead(A3)==HIGH && digitalRead(A2)==LOW && digitalRead(A1)==LOW && digitalRead(A0)==LOW){
+    Serial.print ("Practica No.4 - ");
+    Serial.println(pulsador1.nombre);
+    contador = contador+1; 
+    Serial.println(contador);
+  }
+  else if(digitalRead(A3)==LOW && digitalRead(A2)==HIGH && digitalRead(A1)==LOW && digitalRead(A0)==LOW){
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
+    digitalWrite(12, HIGH);
+    delay(500);
+    digitalWrite(12, LOW);
+    delay(500);
+    digitalWrite(11, HIGH);
+    delay(500);
+    digitalWrite(11, LOW);
+    delay(500);
+    digitalWrite(10, HIGH);
+    delay(500);
+    digitalWrite(10, LOW);
+    delay(500);
+    digitalWrite(9, HIGH);
+    delay(500);
+    digitalWrite(9, LOW);
+    delay(500);
+    digitalWrite(8, HIGH);
+    delay(500);
+    digitalWrite(8, LOW);
+    delay(500);
+    digitalWrite(7, HIGH);
+    delay(500);
+    digitalWrite(7, LOW);
+    delay(500);
+    digitalWrite(8, HIGH);
+    delay(500);
+    digitalWrite(8, LOW);
+    delay(500);    
+    digitalWrite(9, HIGH);
+    delay(500);    
+    digitalWrite(9, LOW);
+    delay(500);
+    digitalWrite(10, HIGH);
+    delay(500);
+    digitalWrite(10, LOW);
+    delay(500);
+    digitalWrite(11, HIGH);
+    delay(500);
+    digitalWrite(11, LOW);
+    delay(500);
+    digitalWrite(12, HIGH);
+    delay(500);
+    digitalWrite(12, LOW);
+    delay(500);
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
+  } 
+  else if(digitalRead(A3)==LOW && digitalRead(A2)==LOW && digitalRead(A1)==HIGH && digitalRead(A0)==LOW){
+    digitalWrite(3, HIGH);
+    digitalWrite(2, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(A4, HIGH);
+    digitalWrite(A5, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(4, HIGH);
+    delay(2000);
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(6, HIGH);
+    digitalWrite(A4, HIGH);
+    digitalWrite(A5, HIGH);
+    digitalWrite(4, HIGH);
+    delay(2000);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(A4, LOW);
+    digitalWrite(A5, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(4, HIGH);
+    delay(2000);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(A4, HIGH);
+    digitalWrite(A5, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(4, HIGH);
+    delay(2000);
+    digitalWrite(A4, LOW);
+    digitalWrite(A5, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(4, LOW);
+    delay(2000);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(A4, HIGH);
+    digitalWrite(A5, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(4, HIGH);
+    delay(2000);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(A4, LOW);
+    digitalWrite(A5, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+  } 
+  else if(digitalRead(A3)==HIGH && digitalRead(A2)==LOW && digitalRead(A1)==HIGH && digitalRead(A0)==LOW) {
+    Serial.print ("Gracias ");
+    Serial.println(pulsador2.nombre);
+    contador = contador+1; 
+    Serial.println(contador);
+  }
+  else if(digitalRead(A3)==LOW && digitalRead(A2)==HIGH && digitalRead(A1)==LOW && digitalRead(A0)==HIGH){
+    Serial.print ("Gracias ");
+    Serial.println(pulsador2.nombre);
+    contador = contador+1; 
+    Serial.println(contador);
+  }
+}
