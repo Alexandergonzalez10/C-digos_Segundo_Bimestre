@@ -29,14 +29,10 @@ void setup()
   pinMode(A3, INPUT);
 }
 
-byte contador = 1;
-
 void loop()
 {
   if(digitalRead(A4)==HIGH){
-    Serial.print("Secuencia-velocidad ");
-    contador = contador; 
-    Serial.println(contador);
+    Serial.print("Secuencia-velocidad 1");
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
@@ -139,9 +135,7 @@ void loop()
     delay(500);
   }
   else if(digitalRead(A3)==HIGH){
-    Serial.print("Secuencia-velocidad ");
-    contador = contador+1; 
-    Serial.println(contador);
+    Serial.print("Secuencia-velocidad 1");
     digitalWrite(13, HIGH);
     delay(250);
     digitalWrite(13, LOW);
