@@ -27,5 +27,5 @@ void loop()
   lcd_alex.setCursor(0,0);
   lcd_alex.print("Alexander");
   lcd_alex.setCursor(0,1);
-  lcd_alex.print("Gonzalez");
+  lcd_alex.print("2020414");
 }
