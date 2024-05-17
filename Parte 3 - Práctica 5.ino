@@ -1,3 +1,16 @@
+/*
+
+   Fundacion Kinal
+   Centro educativo tecnico laboral Kinal
+   Quinto perito
+   Quinto electronica
+   Codigo Tecnico: EB5AM 
+   Curso: Taller de electronica digital y reparacion de computadoras I
+   Proyecto: Relevadores y visualizadores
+   Alexander González 2020414
+   Fecha: 03 de mayo 2024
+   
+*/
 const int A = 11;
 const int B = 10;
 const int C = 7;
