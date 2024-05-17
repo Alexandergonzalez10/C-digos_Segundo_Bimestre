@@ -8,7 +8,7 @@
    Curso: Taller de electronica digital y reparacion de computadoras I
    Proyecto: Relevadores y visualizadores
    Alexander González 2020414
-   Fecha: 03 de mayo 2024
+   Fecha: 16 de mayo 2024
    
 */
 const int A = 11;
