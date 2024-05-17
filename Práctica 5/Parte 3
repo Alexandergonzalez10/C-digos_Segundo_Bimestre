@@ -13,9 +13,9 @@
 */
 const int A = 11;
 const int B = 10;
-const int C = 7;
+const int C = 6;
 const int D = 8;
-const int E = 6;
+const int E = 7;
 const int F = 12;
 const int G = 13;
 
