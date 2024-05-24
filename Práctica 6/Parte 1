@@ -3,29 +3,45 @@
    Centro educativo tecnico laboral Kinal
    Quinto perito
    Quinto electronica
-   Codigo Tecnico: EB5AM 
+   Codigo Tecnico: EB5AM / EB5AV 
    Curso: Taller de electronica digital y reparacion de computadoras I
    Proyecto: Uso de la pantalla LCD com interfaz I2C
    Alexander Daniel González Vásquez
-   Fecha: 16 de mayo
+   Fecha: 07 de mayo
 */
 
-#include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd_alex(32, 16, 2);
+//Librerias
+#include <LiquidCrystal.h>
+
+
+//Definiciones de preprocesador
+#define RS  6
+#define Enable 7
+#define D4 2
+#define D5 3
+#define D6 4
+#define D7 5
+
+//Constructor
+LiquidCrystal LCD_alex(RS, Enable, D4, D5, D6, D7); //Constructor que me permite usar la LCD
 
 void setup()
 {
-  lcd_alex.init();
-  
-  lcd_alex.setCursor(0,0);
-  lcd_alex.backlight(); 
+  LCD_alex.begin(16,2); //Objeto de una LCD de 16 columnas x 2 filas
+  LCD_alex.setCursor(3,0);
+  LCD_alex.print("Alexander");
+  LCD_alex.setCursor(3,1);
+  LCD_alex.print("2020414");
 }
-
-
 void loop()
 {
-  lcd_alex.setCursor(0,0);
-  lcd_alex.print("Alexander");
-  lcd_alex.setCursor(0,1);
-  lcd_alex.print("2020414");
+  LCD_alex.setCursor(0,1);
+  LCD_alex.write(3);
+  /*
+  LCD_Alejandro.setCursor(0,1);  //Primera columna y segunda fila  
+  LCD_Alejandro.write(1);
+  delay(250);
+  LCD_Alejandro.setCursor(0,1);
+  LCD_Alejandro.write(2);
+  delay(250);*/
 }
