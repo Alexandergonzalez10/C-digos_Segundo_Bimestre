@@ -1,0 +1,130 @@
+/*
+   Fundacion Kinal
+   Centro educativo tecnico laboral Kinal
+   Quinto perito
+   Quinto electronica
+   Codigo Tecnico: EB5AM  
+   Curso: Taller de electronica digital y reparacion de computadoras I
+   Proyecto: Proyecto Final
+   Alexander Daniel González Vásquez
+   Fecha: 27 de mayo
+*/
+
+#include <Keypad.h> 
+#include <Servo.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+#define filas_teclado 4        
+#define columnas_teclado 4 
+#define IN0_bcd    5 
+#define IN1_bcd    4 
+#define IN2_bcd    3 
+#define IN3_bcd    2
+#define direccion_lcd 0x25
+#define filas 2
+#define columnas 16
+
+int x = 0;
+int y = 99;
+
+char keys[filas_teclado][columnas_teclado] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'*','0','#','D'}
+};
+
+byte pines_filas[filas_teclado] = {A0, A1, A2, A3};
+byte pines_columnas[columnas_teclado] = {13, 12, 11, 10};
+
+const int lock_pos = 0;             
+const int unlock_pos = 90;  
+
+String conteo_del_0_al_99 = "1*";   
+String info_recibida = ""; 
+
+Keypad tecladoConteo = Keypad( makeKeymap(keys), pines_filas, pines_columnas, filas_teclado,columnas_teclado);
+Servo Servo_alex;
+LiquidCrystal_I2C lcdAlex(direccion_lcd, columnas, filas);
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  Servo_alex.attach(6);
+  lcdAlex.init(); 
+  lcdAlex.backlight(); 
+  //lcdAlex.noBacklight(); 
+  lcdAlex.setCursor(4,0);
+  lcdAlex.print("Alexander");
+  lcdAlex.setCursor(1,1);
+  lcdAlex.print("Proyecto Final");
+}
+
+void loop()
+{
+  char key = tecladoConteo.getKey();  
+  if(key){
+    switch(key){
+      case('1'):
+      {
+        if(x < 100){
+      delay(100);
+      Serial.println(x++);
+      break;       
+        }
+      }
+      case('2'):
+      {
+        if(y < 100){
+      delay(100);
+      Serial.println(y--);
+           break; 
+      }
+    }
+      case('3'):
+      {
+    digitalWrite(9, HIGH);
+    delay(100);
+    digitalWrite(9, LOW);
+    delay(100);
+    digitalWrite(8, HIGH);
+    delay(100);
+    digitalWrite(8, LOW);
+    delay(100);
+    digitalWrite(7, HIGH);
+    delay(100);
+    digitalWrite(7, LOW);
+    delay(100);
+    digitalWrite(8, HIGH);
+    delay(100);
+    digitalWrite(8, LOW);
+    delay(100);
+    digitalWrite(9, HIGH);
+    delay(100);
+    digitalWrite(9, LOW);
+    delay(100);       
+         break; 
+      }
+      case('4'):{
+        digitalWrite(IN0_bcd, LOW);
+        digitalWrite(IN1_bcd, LOW);
+        digitalWrite(IN2_bcd, HIGH);
+        digitalWrite(IN3_bcd, LOW);
+      break;
+      }
+      case('5'):{
+        for(unsigned char b =0; b<181;b++)
+  {
+    Servo_alex.write(b);
+    delay(150);
+  }
+      break;
+      }
+      }
+  }
+  }
